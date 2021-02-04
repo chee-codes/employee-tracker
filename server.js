@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const { clear } = require("console");
+const { allowedNodeEnvironmentFlags } = require("process");
 require("console.table");
 
 const connection = mysql.createConnection({
@@ -26,6 +27,7 @@ const getInfo = () => {
       choices: [
         "View All Employees",
         "View All Departments",
+        "View All Roles",
         "Add Employee",
         "Remove Employee",
         "Update Employee",
@@ -38,6 +40,9 @@ const getInfo = () => {
           break;
         case "View All Departments":
           allDept();
+          break;
+        case "View All Roles":
+          allRoles();
           break;
         case "Add Employee":
           addEmp();
@@ -75,6 +80,14 @@ const allDept = () => {
   });
 };
 
+const allRoles = () => {
+  connection.query("SELECT * FROM role", (err, res) => {
+    if (err) throw err;
+    console.table("\n", res);
+    getInfo();
+  });
+};
+
 const addEmp = () => {
   inquirer
     .prompt([
@@ -90,7 +103,7 @@ const addEmp = () => {
       },
       {
         type: "input",
-        name: "role",
+        name: "roleId",
         message: "Please enter the employees role ID?",
       },
       {
@@ -106,7 +119,7 @@ const addEmp = () => {
         {
           first_name: data.fName,
           last_name: data.lName,
-          role_id: data.role,
+          role_id: data.roleId,
           manager_id: data.manageId,
         },
         (err, res) => {
@@ -117,9 +130,12 @@ const addEmp = () => {
     });
 };
 
+const updateEmp = () => {};
+
 const removeEmp = () => {
   connection.query("SELECT * FROM employee", (err, res) => {
     if (err) throw err;
+
     inquirer
       .prompt([
         {
@@ -146,5 +162,3 @@ const removeEmp = () => {
       });
   });
 };
-
-const updateEmp = () => {};
