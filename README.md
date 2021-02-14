@@ -2,7 +2,7 @@
 
 ## Description
 
-Employee Tracker allows users to manage employees through the command line using Node, Inquirer, and a MySQL database. Through various prompts users are able to view employees by various categories, add new employees, and remove employees.
+Employee Tracker is a CLI that allows a user the ability to manage employees through various prompts. Users are then able to view employees by various categories, add new employees, and remove employees.
 
 ## Getting Started
 
