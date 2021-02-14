@@ -50,9 +50,6 @@ const getInfo = () => {
         case "Remove Employee":
           removeEmp();
           break;
-        case "Update Employee":
-          updateEmp();
-          break;
       }
     });
 };
@@ -129,8 +126,6 @@ const addEmp = () => {
       );
     });
 };
-
-const updateEmp = () => {};
 
 const removeEmp = () => {
   connection.query("SELECT * FROM employee", (err, res) => {
