@@ -25,7 +25,7 @@ Employee Tracker is a CLI that allows a user the ability to manage employees thr
 [Demo Video](https://drive.google.com/file/d/1MgD_UgeBi6asEPxmxl1FdaN2cI-m-_ab/view)
 
 Application running in the command line.
-![alt ext](.img/employee-tracker.png)
+![alt ext](./img/employee-tracker.png)
 
 ## Authors
 
