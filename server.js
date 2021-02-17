@@ -30,7 +30,6 @@ const getInfo = () => {
         "View All Roles",
         "Add Employee",
         "Remove Employee",
-        "Update Employee",
       ],
     })
     .then((res) => {
