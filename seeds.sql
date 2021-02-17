@@ -15,7 +15,7 @@ INSERT INTO role (title, salary, department_id)
 VALUES ('Project Manager', 250000.00, 1);
 
 INSERT INTO role (title, salary, department_id)
-VALUES ("Ast Project Manager", 200000.00, 1);
+VALUES ("Ast Project Manager", 200000.00, 2);
 
 INSERT INTO role(title, salary, department_id)
 VALUES ('Senior Developer', 150000.00, 3);
